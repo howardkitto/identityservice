@@ -1,0 +1,55 @@
+<!-- views/signup.html -->
+<!doctype html>
+<html ng-app="identityservice">
+    <head>
+        <link rel="stylesheet" href="libs/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="libs/font-awesome-4.4.0/css/font-awesome.min.css">
+    <title> Identity Service Sign Up</title>
+            <style>
+        body        { padding-top:80px; }
+    </style>
+    </head>
+    <body>
+        
+        <div class="container" ng-controller="AppCtrl">
+            <div class="jumbotron text-center">
+            
+                        <h1><span class="fa fa-lock"></span> Sign Up</h1>
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                    Name</th>
+                    <th>
+                    Email</th>
+                    <th>
+                    Username</th>
+                    <th>
+                    Password</th>
+                    <th>Action
+                    </th>
+                    <th></th>
+            
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td>
+                    <input class='form-control' ng-model="identity.name"></td>
+                <td>
+                    <input class='form-control' ng-model="identity.email"></td>
+                <td>
+                                <input class = "form-control" ng-model="identity.username">
+                    <td>
+                    <input class='form-control' ng-model="identity.password"></td>
+                <td><button class="btn btn-primary" ng-click="addIdentity()">Sign Up</button></td>
+            </div>
+    </div>
+    
+        <script src="libs/angular.min.js"></script>
+        <script src ="controllers/controller.js"></script>
+        
+    </body>
+</html>
+    
