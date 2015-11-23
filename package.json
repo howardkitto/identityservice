@@ -9,6 +9,10 @@
     "express": "3.3.5",
     "ejs": "*",
     "passport": "*",
-    "passport-local": "*"
+    "passport-local": "*",
+    "passport-facebook": "*",
+    "mongoose": "latest",
+    "bcrypt-nodejs" : "latest"
+      
   }
 }
