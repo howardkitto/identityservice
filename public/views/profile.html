@@ -1,0 +1,46 @@
+<h2>User Profile</h2>
+
+    ID</td><td>{{identity._id}}
+<div class = "local">
+<table class="table">
+        <thead>
+
+            <tr>
+                <td>Name</td><td><input class='form-control' ng-model="identity.local.name"></td>
+            </tr>
+        </thead>
+                
+        <tbody>
+            <tr>
+                <td>Email</td><td><input class='form-control' ng-model="identity.local.email"></td>
+            </tr>
+            <tr>
+                <td>Username</td><td><input class='form-control' ng-model="identity.local.username"></td>
+            </tr>
+            <tr>
+<!--                <td>Password</td><td><input class='form-control' ng-model="identity.local.password"></td>-->
+            </tr>
+        </tbody>
+</table>
+    
+    <button class="btn btn-warning" ng-click="updatePassword(identity._id)">Update Password</button></td><td>
+    </div>
+
+<div class="facebook">
+    <table class="table">
+        <thead>
+ <tr>
+                <td>Facebook ID</td><td>{{identity.facebook.id}}</td>
+            </tr>
+            <tr>
+                <td>Name</td><td><input class='form-control' ng-model="identity.facebook.name"></td>
+            </tr>
+            <tr>
+                <td>Token</td><td><input class='form-control' ng-model="identity.facebook.token"></td>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+<button class="btn btn-warning" ng-click="update(identity._id)">Update</button>
+

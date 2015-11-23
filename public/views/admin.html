@@ -1,9 +1,23 @@
-<h1>Admin</h1>
-<p>
-	<a href="#/">Home</a><br />
-	<a href="#/" ng-click="logout()">Logout</a>
-</p>
-<h2>User List</h2>
-<ul>
-	<li ng-repeat="u in users">{{u.name}}</li>
-</ul>
+<h2>Admin</h2>
+<table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Username</th>
+<!--                <th>Password</th>-->
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="i in identities">
+                <td>{{i.local.name}}</td>
+                <td>{{i.local.email}}</td>
+                <td>{{i.local.username}}</td>
+<!--                <td>{{i.local.password}}</td>-->
+                <td><button type="submit" class="btn btn-default" ng-click="loadProfile(i._id)">Edit</button>
+                <button type="submit" class="btn btn-default" ng-click="deleteIdentity(i._id)">Delete</button></td>
+                
+            </tr>    
+        </tbody>
+</table>
