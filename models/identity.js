@@ -33,6 +33,10 @@ var identitySchema = new Schema({
         }    
 });
 
+identitySchema.pre('findOneAndUpdate', function(next){
+   console.log('middleware functional captain');
+});
+
 
 // generating a hash
 identitySchema.methods.generateHash = function(password) {

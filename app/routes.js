@@ -105,12 +105,12 @@ app.post('/logout', function(req, res){
     
 //reset password
 app.post('/passwordReset', function(req, res){
-//    var identity = Identity.findOneAndUpdate({_id :req.body.id}, 
+    var identity = Identity.findOneAndUpdate({_id :req.body.id})
 //    identity.local.password = Identity.generateHash(req.body.newPassword);
-//    console.log(identity);
+//    console.log(password);
     res.send('boom');
     
-})
+});
 //==============================================================
 
 app.get('/auth/facebook', passport.authenticate('facebook', { scope : 'email' }));
