@@ -68,7 +68,6 @@ app.post('/identity', function(req, res) {
 app.put('/identity/:id', function(req, res){
     var id = req.params.id;
     console.log(req.body);
-//    var updatedPassword = req.body.password;
     Identity.findOneAndUpdate({_id: id}, 
                     {local:{
                      name: req.body.local.name, 
@@ -105,11 +104,23 @@ app.post('/logout', function(req, res){
     
 //reset password
 app.post('/passwordReset', function(req, res){
-    var identity = Identity.findOneAndUpdate({_id :req.body.id})
-//    identity.local.password = Identity.generateHash(req.body.newPassword);
-//    console.log(password);
-    res.send('boom');
-    
+var identity = Identity.findOne({_id :req.body.id},
+    function(findErr, identity){
+    if(findErr){
+        return res.status(500).send(findErr);
+    }
+    console.log('Found identity:');
+    console.log(identity);
+    identity.local.password = identity.generateHash(req.body.newPassword);
+    console.log('identity after updating password: ');
+    console.log(identity);
+    identity.save(function(saveErr){
+        if(saveErr){
+            return res.status(500).send(saveErr);
+        }
+        return res.status(200).send(identity);
+    });
+    });
 });
 //==============================================================
 
